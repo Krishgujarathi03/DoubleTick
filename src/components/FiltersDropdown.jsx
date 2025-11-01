@@ -1,10 +1,11 @@
 import { useState } from "react";
 import filterIcon from "../assets/test_Filter.svg";
+
 export default function FiltersDropdown() {
   const [open, setOpen] = useState(false);
   return (
     <div className="filters-dropdown">
-      <button onClick={() => setOpen((o) => !o)}>
+      <button onClick={() => setOpen((prev) => !prev)}>
         <span>
           <img
             src={filterIcon}
