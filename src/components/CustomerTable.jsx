@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useCallback } from "react";
+import React, { useMemo, useState, useCallback, useEffect } from "react";
 import { FixedSizeList } from "react-window";
 import { generateCustomers } from "../utils/generateCustomers";
 
@@ -9,7 +9,7 @@ import FiltersDropdown from "./FiltersDropdown";
 // For debounced search
 function useDebounce(value, delay) {
   const [debounced, setDebounced] = useState(value);
-  React.useEffect(() => {
+  useEffect(() => {
     const handler = setTimeout(() => setDebounced(value), delay);
     return () => clearTimeout(handler);
   }, [value, delay]);
